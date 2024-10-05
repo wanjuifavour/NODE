@@ -9,7 +9,6 @@ function getNextId() {
     return (maxId + 1).toString();
 }
 
-// In your POST route handler:
 app.post('/data', (req, res) => {
     const newItem = req.body;
     newItem.id = getNextId();

@@ -59,7 +59,7 @@ function submitNewProduct(event) {
     .then(response => response.json())
     .then(data => {
         console.log('Success:', data);
-        products.push(data); // This now includes the server-generated ID
+        products.push(data);
         displayProducts();
         closePopup();
     })
@@ -154,7 +154,6 @@ function displayProducts() {
 
         productDiv.appendChild(img);
         productDiv.appendChild(title);
-        productDiv.appendChild(price);
         productDiv.appendChild(buttonsDiv);
 
         container.appendChild(productDiv);
@@ -320,7 +319,6 @@ function updateCartItemQuantity(productId, change) {
     }
 }
 
-// Close popup when clicking outside
 document.addEventListener('click', (event) => {
     if (!event.target.closest('.popup') && !event.target.closest('button')) {
         closePopup();
